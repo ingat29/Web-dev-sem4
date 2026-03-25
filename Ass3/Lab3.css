@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    /* color: #d3d3d3; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #000000;
+    color : #fdfdfd;
+}
+
+.topbar-left, .topbar-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.topbar-link svg, .topbar-right svg {
+    width: 16px;
+    height: 16px;
+}
+
+.header svg {
+    height: 30px;
+    width: auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+}
+
+
+/* --- HEADER CONTAINER --- */
+    .header {
+        background-color: #ffffff;
+        border-bottom: #00000014 solid 1px;
+        padding: 15px 0;
+
+        position: sticky;
+        top: 0; 
+        z-index: 100;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between; /* Pushes .header-left and .header-right to opposite ends */
+        align-items: center; /* Vertically centers everything in the row */
+        max-width: 100%; /* Standard website container width */
+        margin: 0 auto; /* Centers this inner container on wide screens */
+        padding: 0 20px;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 30px; /* Creates space between the Logo and the Categories button */
+    }
+
+    .logo-desktop {
+        height: 38px;
+        width: auto;
+        display: block;
+    }
+
+    .logo-mobile {
+        display: none;
+    }
+
+    .categories-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px; 
+        padding: 10px 18px;
+        background-color: #ffffff;
+        border : 0px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .categories-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center; 
+        gap: 25px; 
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        color: #333333;
+    }
+
+    .nav-link svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .login-btn {
+        background-color: #40A944;
+        color: #ffffff;
+        padding: 10px 24px;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+.main-content {
+    padding: 0px 20px 20px 20px ;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* "SLIDERS" */
+    .tp-main-content {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        color: #333333;
+        margin-bottom: 8px;
+    }
+
+    .section-title span {
+        color: #40A944;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        color: #666666;
+        margin-bottom: 30px;
+    }
+
+    .banner-slider-wrap {
+        position: relative;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+
+    .swiper-slide {
+        flex: 0 0 280px;
+    }
+
+    .banner {
+        display: block; 
+        position: relative; 
+        height: 200px; 
+        width: 300px;
+        padding: 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        overflow: hidden; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+    }   
+
+    .banner-green { background: linear-gradient(135deg, #9ee4a4 0%, #2ce232 100%); }
+    .banner-red { background: linear-gradient(135deg, #e78897 0%, #e52c3e 100%); }
+
+    .banner h3, .banner p, .banner .btn {
+        position: relative;
+        z-index: 2; 
+    }
+
+    .banner h3 {
+        font-size: 20px;
+        color: #333333;
+        margin-top: 22px;
+        margin-bottom: 4px;
+        line-height: 1.2;
+        position: relative;
+        z-index: 2;
+    }
+
+    .banner p {
+        font-size: 13px; 
+        color: #555555;
+        margin-bottom: 0;
+        max-width: 70%;
+        line-height: 1.3;
+        position: relative;
+        z-index: 2;
+
+        display: -webkit-box;
+        line-clamp: 2;
+        -webkit-line-clamp: 2; 
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
+    .banner .btn {
+        position: absolute;
+        bottom: 20px; 
+        left: 20px;   
+        right: 20px; 
+        text-align: center;
+        padding: 10px 0; 
+        background-color: #ffffff;
+        color: #333333;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 3; 
+    }
+
+    .badge-top {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        background-color: #ffeb3b;
+        color: #333;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
+        z-index: 2;
+    }
+
+    .illus {
+        position: absolute;
+        bottom: 70px;
+        right: 15px;
+        width: 90px; 
+        height: auto;
+        z-index: 1; 
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .nav-btn svg {
+        width: 20px;
+        height: 20px;
+        color: #333333;
+    }
+
+    .nav-prev { left: -22px; }
+    .nav-next { right: -22px; }
