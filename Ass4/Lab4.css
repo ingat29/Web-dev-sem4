@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f0f0f0;
+    user-select: none;
+}
+/* '#' is the id selector; '.' is the class selector */
+#draggable-box {
+    width: 150px;
+    height: 150px;
+    background-color: #7b0d67;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    cursor: grab;
+    border-radius: 10px;
+    box-shadow: 4px 10px 10px rgba(0,0,0,0.2);
+}
+
+#draggable-box:active {
+    cursor: grabbing;
+}
