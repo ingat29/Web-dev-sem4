@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 - jQuery Modal</title>
+    <link rel="stylesheet" href="Lab5.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <!-- Main Form Container -->
+    <div class="form-container">
+        <h2>Main Form</h2>
+        <form id="mainForm">
+            <div class="form-group">
+                <label>Field 1:</label>
+                <input type="text" id="main1">
+            </div>
+            <div class="form-group">
+                <label>Field 2:</label>
+                <input type="text" id="main2">
+            </div>
+            <div class="form-group">
+                <label>Field 3:</label>
+                <input type="text" id="main3">
+            </div>
+            <div class="form-group">
+                <label>Field 4:</label>
+                <input type="text" id="main4">
+            </div>
+            <div class="form-group">
+                <label>Field 5:</label>
+                <input type="text" id="main5">
+            </div>
+            <div class="form-group">
+                <label>Result from Modal:</label>
+                <input type="text" id="mainResult" readonly style="background-color: #eee;">
+            </div>
+
+            <button type="button" id="openModalBtn">Open Modal</button>
+        </form>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div id="modal">
+        <h3>Enter Values to Concatenate</h3>
+        <form id="modalForm">
+            <div class="form-group">
+                <input type="text" id="mod1" placeholder="Value A">
+            </div>
+            <div class="form-group">
+                <input type="text" id="mod2" placeholder="Value B">
+            </div>
+            <div class="form-group">
+                <input type="text" id="mod3" placeholder="Value C">
+            </div>
+            <div class="form-group">
+                <input type="text" id="mod4" placeholder="Value D">
+            </div>
+
+            <button type="button" id="closeModalBtn">Submit & Close</button>
+        </form>
+    </div>
+
+    <script src="Lab5.js"></script>
+</body>
+</html>
