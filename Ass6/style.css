@@ -1,0 +1,147 @@
+/* --- Core Reset & Theme --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    padding-bottom: 40px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* --- Layout Header & Nav --- */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #34495e;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: #3498db;
+}
+
+/* --- Form Alignment Magic (Flexbox) --- */
+.filter-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+.filter-section h3, .list-section h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+}
+
+/* This flex layout perfectly aligns dropdowns, inputs, and buttons in one row */
+.form-group-inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="text"], input[type="number"] {
+    flex: 1; /* Allows the text input to expand dynamically */
+    min-width: 150px;
+}
+
+/* --- Interactive Elements --- */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn.primary { background-color: #2ecc71; color: white; }
+.btn.primary:hover { background-color: #27ae60; }
+.btn.secondary { background-color: #95a5a6; color: white; }
+.btn.secondary:hover { background-color: #7f8c8d; }
+.btn.danger { background-color: #e74c3c; color: white; padding: 4px 8px; font-size: 12px; }
+.btn.action { background-color: #3498db; color: white; padding: 4px 8px; font-size: 12px; text-decoration: none; border-radius: 4px; margin-right: 5px;}
+
+.info-box {
+    margin-top: 15px;
+    background-color: #e8f4fd;
+    border-left: 4px solid #3498db;
+    padding: 10px;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+#currentFilterText {
+    font-weight: bold;
+    color: #e67e22;
+}
+
+/* --- Responsive Table Styling --- */
+.list-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+tr:hover {
+    background-color: #fdfefe;
+}

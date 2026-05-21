@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Dashboard Stats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Document Management System</h1>
+        <nav>
+            <a href="index.html" class="nav-btn">Browse</a>
+            <a href="add.html" class="nav-btn">Add New Document</a>
+            <a href="stats.html" class="nav-btn active">System Stats</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="list-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: transparent; box-shadow: none; padding:0;">
+            <div class="filter-section" style="text-align: center; margin:0;">
+                <h4>Total Documents</h4>
+                <p id="statTotal" style="font-size: 36px; font-weight: bold; color: #3498db; margin-top: 10px;">0</p>
+            </div>
+            <div class="filter-section" style="text-align: center; margin:0;">
+                <h4>Total Pages Combined</h4>
+                <p id="statPages" style="font-size: 36px; font-weight: bold; color: #2ecc71; margin-top: 10px;">0</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('get_stats.php')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('statTotal').textContent = data.total_docs;
+                    document.getElementById('statPages').textContent = data.total_pages || 0;
+                });
+        });
+    </script>
+</body>
+</html>

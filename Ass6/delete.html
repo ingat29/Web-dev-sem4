@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container" style="max-width: 500px; margin-top: 100px;">
+        <section class="filter-section" style="border-top: 4px solid #e74c3c; text-align: center;">
+            <h3>⚠️ Confirm Destruction</h3>
+            <p style="margin: 15px 0; color: #555;">
+                Are you absolutely sure you want to completely erase <strong id="deleteTargetText">this record</strong>? This action cannot be reversed.
+            </p>
+
+            <form action="delete_document.php" method="POST">
+                <input type="hidden" name="id" id="deleteId">
+                <button type="submit" class="btn danger" style="padding: 10px 20px; font-size: 14px;">Yes, Delete Record</button>
+                <a href="index.html" class="btn secondary" style="text-decoration: none; display: inline-block; padding: 10px 20px;">Cancel</a>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = new URLSearchParams(window.location.search).get('id');
+            if(!id) { window.location.href = 'index.html'; return; }
+
+            document.getElementById('deleteId').value = id;
+
+            // Fetch name to display in the prompt
+            fetch(`get_single_document.php?id=${id}`)
+                .then(res => res.json())
+                .then(doc => {
+                    if(!doc.error) {
+                        document.getElementById('deleteTargetText').textContent = `"${doc.title}" by ${doc.author}`;
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

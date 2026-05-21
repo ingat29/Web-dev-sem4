@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>📚 Document Management System</h1>
+        <nav>
+            <a href="index.html" class="nav-btn active">Browse</a>
+            <a href="add.html" class="nav-btn">Add New Document</a>
+            <a href="stats.html" class="nav-btn">System Stats</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="filter-section">
+            <h3>Filter Documents</h3>
+            <div class="form-group-inline">
+                <label for="filterSelect">Filter By:</label>
+                <select id="filterSelect">
+                    <option value="document_type">Document Type</option>
+                    <option value="document_format">Document Format</option>
+                </select>
+
+                <input type="text" id="filterInput" placeholder="e.g., PDF, Book, Article...">
+                <button id="btnFilter" class="btn primary">Apply Filter</button>
+                <button id="btnClear" class="btn secondary">Clear</button>
+            </div>
+
+            <div id="previousFilterDisplay" class="info-box">
+                Active Filter: <span id="currentFilterText">None (Showing all records)</span>
+            </div>
+        </section>
+
+        <section class="list-section">
+            <h3>All Available Documents</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Pages</th>
+                            <th>Type</th>
+                            <th>Format</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="documentsTableBody">
+                        <tr>
+                            <td colspan="6" style="text-align: center;">Loading documents...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

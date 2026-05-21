@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Document Management System</h1>
+        <nav>
+            <a href="index.html" class="nav-btn">Browse</a>
+            <a href="add.html" class="nav-btn active">Add New Document</a>
+            <a href="stats.html" class="nav-btn">System Stats</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="filter-section">
+            <h3>Add a New Document</h3>
+            <form action="add_document.php" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Title:</label>
+                    <input type="text" name="title" required style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Author:</label>
+                    <input type="text" name="author" required style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Number of Pages:</label>
+                    <input type="number" name="number_of_pages" min="1" required style="width: 100%; padding: 8px;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Document Type:</label>
+                    <input type="text" name="document_type" placeholder="e.g., Book, Article" required style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Document Format:</label>
+                    <input type="text" name="document_format" placeholder="e.g., PDF, DOCX" required style="width: 100%;">
+                </div>
+                <div>
+                    <button type="submit" class="btn primary">Save Document</button>
+                    <a href="index.html" class="btn secondary" style="text-decoration: none; display: inline-block;">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

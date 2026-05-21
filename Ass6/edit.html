@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Document Management System</h1>
+    </header>
+    <main class="container">
+        <section class="filter-section">
+            <h3>Modify Document Entries</h3>
+            <form action="update_document.php" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="hidden" name="id" id="docId">
+
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Title:</label>
+                    <input type="text" name="title" id="docTitle" required style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Author:</label>
+                    <input type="text" name="author" id="docAuthor" required style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Number of Pages:</label>
+                    <input type="number" name="number_of_pages" id="docPages" min="1" required style="width: 100%; padding: 8px;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Document Type:</label>
+                    <input type="text" name="document_type" id="docType" required style="width: 100%;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px;">Document Format:</label>
+                    <input type="text" name="document_format" id="docFormat" required style="width: 100%;">
+                </div>
+                <div>
+                    <button type="submit" class="btn primary">Apply Changes</button>
+                    <a href="index.html" class="btn secondary" style="text-decoration: none; display: inline-block;">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Read ?id=X parameter directly out of the URL string
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (!id) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // AJAX call to grab data for just this specific row ID
+            fetch(`get_single_document.php?id=${id}`)
+                .then(res => res.json())
+                .then(doc => {
+                    if(doc.error) { alert(doc.error); return; }
+                    // Prepopulate form matching values
+                    document.getElementById('docId').value = doc.id;
+                    document.getElementById('docTitle').value = doc.title;
+                    document.getElementById('docAuthor').value = doc.author;
+                    document.getElementById('docPages').value = doc.number_of_pages;
+                    document.getElementById('docType').value = doc.document_type;
+                    document.getElementById('docFormat').value = doc.document_format;
+                });
+        });
+    </script>
+</body>
+</html>
