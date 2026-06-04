@@ -1,0 +1,8 @@
+{
+    "java.project.outputPath": "src/main/webapp/WEB-INF/classes",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\tomcat9\\lib\\servlet-api.jar",
+        "c:\\tomcat9\\lib\\jsp-api.jar"
+    ]
+}
